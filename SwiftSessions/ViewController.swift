@@ -14,12 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var tweetText: UITextField!
     @IBAction func tweetAction(sender: AnyObject) {
         if tweetText.text != "" {
-           tweetDelegate?.addTweet(tweetText.text!)
+           tweetContentDelegate?.addTweet(tweetText.text!)
         }
     }
     
     @IBOutlet weak var tweetContainer: UIView!
     var tweetDelegate: TweetContentDelegate?
+    var tweetContentDelegate : TweetBoxContentDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tweetView.layer.shadowColor = UIColor.grayColor().CGColor
@@ -45,6 +47,12 @@ class ViewController: UIViewController {
             where segue.identifier == "tweetContainerSegue" {
                 
                 tweetDelegate = vc
+        }
+        
+        if let vc = segue.destinationViewController as? TweetBoxViewController
+            where segue.identifier == "tweetBoxContainerSegue" {
+                
+                tweetContentDelegate  = vc
         }
     }
 

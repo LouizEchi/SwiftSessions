@@ -7,8 +7,11 @@
 //
 
 import UIKit
+protocol TweetBoxContentDelegate {
+    func addTweet(tweet: String)
+}
 
-class TweetBoxViewController: UIViewController {
+class TweetBoxViewController: UIViewController, TweetBoxContentDelegate  {
     @IBOutlet weak var tweetContent: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,10 @@ class TweetBoxViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addTweet(tweet: String) {
+        tweetContent.text = tweet
     }
     
     

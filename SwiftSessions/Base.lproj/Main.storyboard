@@ -58,27 +58,28 @@
                                     <constraint firstAttribute="trailing" secondItem="RG4-la-dAr" secondAttribute="trailing" constant="8" id="zW6-YB-coS"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRn-pf-AC2">
-                                <rect key="frame" x="0.0" y="95" width="600" height="505"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-Dw-BmI">
+                                <rect key="frame" x="20" y="127" width="560" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="7R0-1f-mJS"/>
+                                    <constraint firstAttribute="height" constant="128" id="aQ7-ke-vcU"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="gVc-dq-ZMg" kind="embed" identifier="tweetContainerSegue" id="foA-j0-dLS"/>
+                                    <segue destination="zqF-2y-iyp" kind="embed" identifier="tweetBoxContainerSegue" id="IFK-wC-dVc"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nRn-pf-AC2" secondAttribute="bottom" id="0Eq-KR-PN3"/>
-                            <constraint firstAttribute="trailing" secondItem="nRn-pf-AC2" secondAttribute="trailing" id="C7w-Wy-v1u"/>
                             <constraint firstAttribute="trailing" secondItem="h5Q-uQ-7if" secondAttribute="trailing" id="E5i-3Q-6lX"/>
-                            <constraint firstItem="nRn-pf-AC2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-95" id="HDn-mb-PSt"/>
-                            <constraint firstItem="nRn-pf-AC2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IKx-Ld-bPy"/>
                             <constraint firstItem="h5Q-uQ-7if" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KsZ-ox-V8Q"/>
-                            <constraint firstItem="nRn-pf-AC2" firstAttribute="leading" secondItem="h5Q-uQ-7if" secondAttribute="trailing" constant="-600" id="aOa-ai-q3A"/>
+                            <constraint firstItem="gH9-Dw-BmI" firstAttribute="top" secondItem="h5Q-uQ-7if" secondAttribute="bottom" constant="34" id="Pkb-Tu-Rea"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="gH9-Dw-BmI" secondAttribute="leading" id="XmN-lA-pXR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gH9-Dw-BmI" secondAttribute="trailing" id="ZLf-Bn-eh4"/>
                             <constraint firstAttribute="topMargin" secondItem="h5Q-uQ-7if" secondAttribute="top" id="vLP-kd-F3K"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tweetContainer" destination="nRn-pf-AC2" id="9T5-Xu-Gay"/>
                         <outlet property="tweetText" destination="2ZN-Ox-PPv" id="HGx-dq-tbc"/>
                         <outlet property="tweetView" destination="h5Q-uQ-7if" id="5Aq-tS-9qs"/>
                     </connections>
@@ -96,30 +97,17 @@
                         <viewControllerLayoutGuide type="bottom" id="Vts-3C-rKf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f9Z-bz-q2L">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74X-Gq-Uy3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8p-8G-A8t">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
-                                        <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-Dw-BmI">
-                                                <rect key="frame" x="20" y="22" width="560" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="560" id="7R0-1f-mJS"/>
-                                                    <constraint firstAttribute="height" constant="128" id="aQ7-ke-vcU"/>
-                                                </constraints>
-                                            </containerView>
-                                        </subviews>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="gH9-Dw-BmI" firstAttribute="leading" secondItem="C8p-8G-A8t" secondAttribute="leading" constant="20" id="Cwe-71-yC7"/>
-                                            <constraint firstItem="gH9-Dw-BmI" firstAttribute="top" secondItem="C8p-8G-A8t" secondAttribute="top" constant="22" id="fx5-KS-Ufr"/>
                                             <constraint firstAttribute="height" constant="505" id="fzY-Sj-hnX"/>
-                                            <constraint firstAttribute="trailing" secondItem="gH9-Dw-BmI" secondAttribute="trailing" constant="20" id="jQK-Y0-lcK"/>
-                                            <constraint firstItem="gH9-Dw-BmI" firstAttribute="centerX" secondItem="C8p-8G-A8t" secondAttribute="centerX" id="mHc-wL-Ifl"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -168,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="399" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neR-JW-w0o">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neR-JW-w0o">
                                 <rect key="frame" x="42" y="53" width="314" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="UJR-74-hbW"/>
@@ -194,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMz-31-fzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.5" y="1562"/>
+            <point key="canvasLocation" x="-303.5" y="844"/>
         </scene>
     </scenes>
 </document>
