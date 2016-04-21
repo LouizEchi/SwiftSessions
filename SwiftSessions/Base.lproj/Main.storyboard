@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -61,7 +61,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRn-pf-AC2">
                                 <rect key="frame" x="0.0" y="95" width="600" height="505"/>
                                 <connections>
-                                    <segue destination="gVc-dq-ZMg" kind="embed" identifier="tweetContainerSegue" id="foA-j0-dLS"/>
+                                    <segue destination="Mbo-QE-9NU" kind="embed" identifier="TweetTable" id="YtX-6E-Xrl"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -96,14 +96,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Vts-3C-rKf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f9Z-bz-q2L">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74X-Gq-Uy3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8p-8G-A8t">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-Dw-BmI">
                                                 <rect key="frame" x="20" y="22" width="560" height="128"/>
@@ -155,6 +155,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AS-dG-Ud1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="607" y="1075.5"/>
+        </scene>
+        <!--Tweet Table View Controller-->
+        <scene sceneID="sHg-Fb-Qmd">
+            <objects>
+                <tableViewController storyboardIdentifier="TweetTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mbo-QE-9NU" customClass="TweetTableViewController" customModule="SwiftSessions" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gJ7-NI-oFa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="70" id="WOD-8S-50n" customClass="TweetCell" customModule="SwiftSessions" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOD-8S-50n" id="6kO-SZ-iN4">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1K-68-RtV">
+                                            <rect key="frame" x="8" y="17" width="584" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="a1K-68-RtV" secondAttribute="trailing" id="bar-qF-UmP"/>
+                                        <constraint firstItem="a1K-68-RtV" firstAttribute="top" secondItem="6kO-SZ-iN4" secondAttribute="topMargin" constant="9" id="nIP-hr-yYS"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="a1K-68-RtV" secondAttribute="leading" id="nq3-mu-xPd"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="a1K-68-RtV" secondAttribute="bottom" constant="8.5" id="smO-90-Jld"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tweetContent" destination="a1K-68-RtV" id="Cjx-Qw-JiP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mbo-QE-9NU" id="LKT-db-Lj7"/>
+                            <outlet property="delegate" destination="Mbo-QE-9NU" id="RLf-7T-CbE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3u4-7d-1X8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-481" y="971"/>
         </scene>
         <!--Tweet Box View Controller-->
         <scene sceneID="PkJ-v6-c47">

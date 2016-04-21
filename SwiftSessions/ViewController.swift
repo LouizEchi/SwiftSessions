@@ -41,8 +41,8 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let vc = segue.destinationViewController as? SecondViewController
-            where segue.identifier == "tweetContainerSegue" {
+        if let vc = segue.destinationViewController as? TweetTableViewController
+            where segue.identifier == "TweetTable" {
                 
                 tweetDelegate = vc
         }
